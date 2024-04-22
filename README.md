@@ -1,4 +1,4 @@
-# FORTIFY #
+# BLOG{XPLOIT} #
 
 
 YOUR_PROJECT_NAME is a comprehensive solution designed to tackle [a specific problem or task]. It simplifies the process by [short description of what your project does and its primary advantage].
