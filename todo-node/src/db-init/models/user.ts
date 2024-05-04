@@ -42,12 +42,12 @@ const userSchema: mongoose.Schema<IUserSchema> = new mongoose.Schema<IUserSchema
 userSchema.pre('save', async function(next) {
   try {
     // this condition checks if password field is modified or not, if password is not modified then it skips the un-necessary hashing
-    // if (!this.isModified('password')) {
-    //   return next();
-    // }
+    if (!this.isModified('password')) {
+      return next();
+    }
     // Hash the password and assign it back to the field
-    // const hashedPassword = await bcrypt.hash(this.password, 10);
-    // this.password = hashedPassword;
+    const hashedPassword = await bcrypt.hash(this.password, 10);
+    this.password = hashedPassword;
     next();
   } catch (error: any) {
     next(error);

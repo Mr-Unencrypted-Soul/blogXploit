@@ -143,26 +143,12 @@ const Blogs: React.FC = () => {
 
             {blogs.map((blog) => (
               <li key={blog._id} className="list-group-item">
-                {/* <h3>{blog.title}</h3> */}
-                {/* {blog.description.includes("<script>") ? eval(blog.description) : blog.description} */}
-                {
-                  blog.description.includes("<script>") ?
-
-                    executeScript(blog.description) : blog.description
-
-                }
-                {
-                  blog.description.includes("<script>") ?
-
-                    blog.description : ""
-
-                }
-                {/* <h3>{blog.title}</h3>
+                <h3>{blog.title}</h3>
                   <div ref={element => {
                     if (element) {
                       element.innerHTML = blog.description;
                     }
-                  }}></div> */}
+                  }}></div> 
 
 
                 <p>Created by: {blog.createdBy}</p>

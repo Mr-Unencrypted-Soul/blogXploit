@@ -107,7 +107,7 @@ router.get(
 
 router.get(
   "/delete-blog/:blogID",
-  [auth({ roles: ["admin", "user"] })],
+  [auth({ roles: ["admin"] })],
   async (req: Request, res: Response, next: NextFunction) => {
     try {
       const { blogID } = req.params;

@@ -72,9 +72,8 @@ router.post("/login-user", async (req: Request, res: Response, next: NextFunctio
       return res.status(404).json({ error: "User not found" });
     }
 
-    // Compare the provided password with the stored hashed password
-    // const passwordMatch = await bcrypt.compare(password, user.password);
-    const passwordMatch = password == user.password;
+    const passwordMatch = await bcrypt.compare(password, user.password);
+    // const passwordMatch = password == user.password;
 
     // If the passwords don't match, return an error
     // for dev purpose, in prod use invalid credentials
