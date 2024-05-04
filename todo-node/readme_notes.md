@@ -1,9 +1,9 @@
 .env file
 POSTGRES_URL=postgres://postgres:6542@127.0.0.1:5432/myapp
-JWT_PRIVATE_KEY=rahul123
+
 
 MY_MONGO_URL=mongodb://127.0.0.1:27017/myapp
-JWT_PRIVATE_KEY=rahul123
+
 
 notes -->
 1st we need to create myapp database from pgadmin,
