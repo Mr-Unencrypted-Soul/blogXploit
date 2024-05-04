@@ -1,0 +1,71 @@
+                   
+                   
+┌─────────────────┐
+│ 9 Code Findings │
+└─────────────────┘                                
+    todo-react/src/screens/Blogs.tsx
+   ❯❯❱ typescript.react.security.react-insecure-request.react-insecure-request
+          Unencrypted request over HTTP detected.
+          Details: https://sg.run/1n0b           
+                                                 
+           18┆ const response = await axios.get('http://localhost:3001/blog/get-all-blogs', {
+           19┆   headers: {
+           20┆     Authorization: `Bearer ${token}`,
+           21┆     'X-XSS-Protection': '1; mode=block'
+           22┆   },
+           23┆ });
+            ⋮┆----------------------------------------
+           36┆ await axios.post('http://localhost:3001/blog/create-blog', newBlog, {
+           37┆   headers: {
+           38┆     Authorization: `Bearer ${token}`,
+           39┆     'X-XSS-Protection': '1; mode=block'
+           40┆   },
+           41┆ });
+            ⋮┆----------------------------------------
+           43┆ const updatedBlogs = await axios.get('http://localhost:3001/blog/get-all-blogs', {
+           44┆   headers: {
+           45┆     Authorization: `Bearer ${token}`,
+           46┆     'X-XSS-Protection': '1; mode=block'
+           47┆   },
+           48┆ });
+            ⋮┆----------------------------------------
+           66┆ const updatedBlogs = await axios.get('http://localhost:3001/blog/get-all-blogs', {
+           67┆   headers: {
+           68┆     Authorization: `Bearer ${token}`,
+           69┆     'X-XSS-Protection': '1; mode=block'
+           70┆   },
+           71┆ });
+            ⋮┆----------------------------------------
+           88┆ const updatedBlogs = await axios.get('http://localhost:3001/blog/get-all-blogs', {
+           89┆   headers: {
+           90┆     Authorization: `Bearer ${token}`,
+           91┆     'X-XSS-Protection': '1; mode=block'
+           92┆   },
+           93┆ });
+   
+    ❯❱ javascript.browser.security.eval-detected.eval-detected
+          Detected the use of eval(). eval() can be dangerous if used to evaluate dynamic content. If this 
+          content can be input from outside the program, this may be a code injection vulnerability. Ensure
+          evaluated content is not definable by external sources.                                          
+          Details: https://sg.run/7ope                                                                     
+                                                                                                           
+          124┆ eval(scriptContent);
+   
+   ❯❯❱ javascript.browser.security.insecure-document-method.insecure-document-method
+          User controlled data in methods like `innerHTML`, `outerHTML` or `document.write` is an anti-pattern
+          that can lead to XSS vulnerabilities                                                                
+          Details: https://sg.run/LwA9                                                                        
+                                                                                                              
+          149┆ element.innerHTML = blog.description;
+                                       
+    todo-react/src/screens/Register.tsx
+   ❯❯❱ typescript.react.security.react-insecure-request.react-insecure-request
+          Unencrypted request over HTTP detected.
+          Details: https://sg.run/1n0b           
+                                                 
+           30┆ const response = await axios.post('http://localhost:3001/user/login-user', { username,
+               password });                                                                          
+            ⋮┆----------------------------------------
+           39┆ const response = await axios.post('http://localhost:3001/user/create-user', { username,
+               password });                                                                           
+
