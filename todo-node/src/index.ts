@@ -24,7 +24,38 @@ app.use(bodyParser.json());
 app.use(cors());
 
 // Block all unwanted headers using helmet
-app.use(helmet());
+//app.use(helmet());
+// Configuring Helmet for security headers
+app.use(helmet({
+  contentSecurityPolicy: {
+      directives: {
+          defaultSrc: ["'self'"],
+          styleSrc: ["'self'", 'https:', 'unsafe-inline'],
+          fontSrc: ["'self'", 'https:', 'data:'],
+          scriptSrc: ["'self'", 'https:', 'unsafe-inline', 'unsafe-eval'],
+          frameSrc: ["'none'"],
+          imgSrc: ['self', 'data:', 'https:'],
+          sandbox: ['allow-forms', 'allow-scripts'],
+          reportUri: '/report-violation',
+          objectSrc: ["'none'"],
+      }
+  },
+  frameguard: {
+      action: 'deny'
+  },
+  dnsPrefetchControl: {
+      allow: false
+  },
+  hsts: {
+      maxAge: 63072000,
+      includeSubDomains: true,
+      preload: true
+  },
+  ieNoOpen: true,
+  noSniff: true,
+  xssFilter: true,
+  referrerPolicy: { policy: "no-referrer" }
+}));
 
 app.use(
   morgan("common", {
