@@ -1,7 +1,6 @@
 # BLOG{XPLOIT} #
 
-The web-application that used in this project is a “Hackers Blog Website”. Serving a comprehensive platform for users who are interested in the latest cybersecurity exploits and techniques. This website has two types of users: normal users and administrator. 
-Normal user can engage and create,  read by viewing as well as update their created blog but cant delete their blog, Administrators on the other hand have the capability to manage the blog by delete any of the blogs .This website stands as a one stop solution for those who are eager to learn cybersecurity. This endeavor not only showcases my technical capabilities but also my commitment to contributing valuable resources to the cybersecurity community.This was originally created by me as a self learing project as this was an opputurnity for me to apply and enhance my skills in web development and cybersecurity, I implemented various security features to safeguard the website and its users enhancing the overall reliability and safety of the platform
+A blog web application for ethical hacking.
 
 ## Fixed Vulnerabilities Features
 
